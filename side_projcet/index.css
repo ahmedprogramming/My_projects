@@ -1,0 +1,180 @@
+:root{
+    --main-color:#845EC2;
+    --font-color: #B39CD0;
+    --icon-color: #00C9A7
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+body{
+    box-sizing: border-box;
+    background-color: rgb(238, 237, 237);
+}
+.header{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+.header::before{
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 550px;
+    background-image: linear-gradient(to top,var(--main-color), var(--font-color));
+    left: -20px;
+    top: 0;
+    z-index: -1;
+    border-bottom-left-radius: 300px;
+    border-bottom-right-radius: 300px;
+}
+.header .container{
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    align-items: center;
+}
+.header .container .phone{
+    flex-basis: 800px;
+}
+.header .container .text{
+    width: 100%;
+    max-width: 400px;
+    background-image: linear-gradient();
+}
+.header .container .phone .saumag{
+    width: 220px;
+    margin: 0 auto;
+    border: 10px solid white;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 400px;
+}
+.header .container .phone .saumag .heads{
+    background-image: linear-gradient(to right,var(--main-color) 70%, var(--font-color));
+}
+.header .container .phone .saumag .heads .stat{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    padding: 30px 0 15px;
+}
+.header .container .phone .saumag .heads .stat i{
+    color: white;
+}
+.header .container .phone .saumag .heads .stat::before{
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 20px;
+    background-color: white;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    left: 17%;
+    top: 0;
+}
+.header .container .phone .saumag .heads .stat .image {
+    display: flex;
+    align-items: center;
+}
+.header .container .phone .saumag .heads .stat .image .text{
+    font-size: 10px;
+}
+.header .container .phone .saumag .heads .stat .image img{
+    margin-right: 10px;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+.header .container .phone .saumag  .chat{
+    background-color: white;
+}
+.header .container .phone .saumag  .chat span{
+    border: 1px solid black;
+    font-size: 10px;
+    display: block;
+    width: fit-content;
+    margin-bottom: 5px;
+    background-color: whitesmoke;
+    padding: 4px;
+
+}
+.header .container .phone .saumag  .chat .images{
+    margin-left: auto;
+    width: 54%;
+
+}
+.header .container .phone .saumag  .chat span:nth-child(4){
+    background-color: rgb(227, 224, 224);
+    margin-left: auto;
+}
+.header .container .phone .saumag  .chat span:nth-child(5){
+    background-color: rgb(227, 224, 224);
+    margin-left: auto;
+}
+.header .container .phone .saumag  .chat span:nth-child(6){
+    background-color: rgb(227, 224, 224);
+    margin-left: auto;
+}
+.header .container .phone .saumag  .chat .money{
+    background-image: linear-gradient(to right,var(--main-color) 70%, var(--font-color));
+    display: flex;
+    margin-bottom: 10px;
+    width: 140px;
+    justify-content: space-between;
+    border-top-left-radius: 5px;
+}
+.header .container .phone .saumag  .chat .money:last-child{
+    margin-bottom: 0;
+}
+.header .container .phone .saumag .chat .money span{
+    margin-right: 10px;
+}
+.header .container .phone .saumag .send{
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(231, 229, 229, 0.944);
+    display: flex;
+    justify-content: end;
+}
+.header .container .phone .saumag .send i{
+    border: 2px solid black;
+    width: fit-content;
+    padding: 2px;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+.header .container  .text{
+    text-align: start;
+}
+.header .container  .text h2{
+    margin-bottom: 15px;
+    color: var(--icon-color);
+}
+img{
+    width: 30px;
+    border-radius: 10px;
+}
+@media (max-width: 768px){
+    .header .container {
+        flex-direction: column;
+    }
+    .header .container .phone{
+        flex-basis: 300px;
+        margin-bottom: 20px;
+    }
+    .header .container  .text{
+        text-align: center;
+        font-size: 14px;
+        width: 100%;
+        max-width: 200px;
+    }
+}
