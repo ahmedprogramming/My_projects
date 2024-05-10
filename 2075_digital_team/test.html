@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      let str = "as123ld1235654fj";
+      let string = str.split("");
+      let collection = [];
+      let collectionNoRepeat = [];
+      for (let i = 0; i < string.length; i++) {
+        if (isNaN(string[i]) === true) {
+          continue;
+        } else {
+          collection.push(Number(string[i]));
+        }
+      }
+      if (collection.length == 0) {
+        collection.push("One more run!");
+        collectionNoRepeat = collection.join("");
+      } else {
+        collectionNoRepeat = [];
+        for (let f = 0; f < collection.length; f++) {
+          if (collectionNoRepeat.includes(collection[f]) == false) {
+            collectionNoRepeat.push(collection[f]);
+          }
+        }
+        collectionNoRepeat = collectionNoRepeat.join("");
+      }
+
+      console.log(collectionNoRepeat);
+    </script>
+  </body>
+</html>
