@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .space {
+        display: flex;
+        flex-direction: column;
+      }
+      .all {
+        display: flex;
+        align-items: center;
+      }
+      .all .item {
+        margin-right: 10px;
+        border: 1px solid black;
+        width: 300px;
+        height: 10px;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>TODO List</h1>
+    <p>Items</p>
+    <div class="form">
+      <input id="input" placeholder="Add an Item" type="text" />
+      <button>Add Item</button>
+    </div>
+    <div class="space"></div>
+    <script>
+      let form = document.querySelector(".form");
+      let space = document.querySelector(".space");
+      let button = document.getElementsByTagName("button")[0];
+      let input = document.getElementById("input");
+      let Item = document.createElement("p");
+      let all = document.createElement("div");
+      let Delete = document.createElement("button");
+      all.classList.add("all");
+      Item.classList.add("item");
+      Delete.classList.add("delete");
+      Delete.innerHTML = "Delete";
+      button.addEventListener("click", function () {
+        if (input.value == "") {
+          return false;
+        }
+        Item.innerHTML = input.value;
+        all.appendChild(Item);
+        all.appendChild(Delete);
+        space.appendChild(all.cloneNode(true));
+        input.value = "";
+      });
+    </script>
+  </body>
+</html>

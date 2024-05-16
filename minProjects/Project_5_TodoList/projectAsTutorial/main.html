@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>ToDO List</h1>
+    <h2>Items</h2>
+    <input id="ItemInput" type="text" placeholder="Add an item" />
+    <button onclick="addItem()">add item</button>
+    <div id="items"></div>
+    <script>
+      let items = ["hi", "Bay"];
+      const itemsDiv = document.getElementById("items");
+      const input = document.getElementById("ItemInput");
+      const storageKey = "items";
+      function loadItems() {
+        const oldItems = localStorage.getItem(storageKey);
+        if (oldItems) items = JSON.parse(oldItems);
+        renderItems();
+      }
+      function saveItems() {
+        const stringItems = JSON.stringify(items);
+        localStorage.setItem(storageKey, stringItems);
+      }
+      function renderItems() {
+        itemsDiv.innerHTML = null;
+
+        for (const [inx, item] of Object.entries(items)) {
+          const container = document.createElement("div");
+          container.style.marginBottom = "10px";
+          const text = document.createElement("p");
+          text.style.display = "inline";
+          text.style.marginRight = "10px";
+          const button = document.createElement("button");
+          button.textContent = "Delete";
+          button.onclick = () => removeItem(inx);
+          text.textContent = item;
+          container.appendChild(text);
+          container.appendChild(button);
+          itemsDiv.appendChild(container);
+        }
+      }
+      renderItems();
+      function addItem() {
+        const value = input.value;
+        if (!value) {
+          value = "";
+          return false;
+        }
+        items.push(value);
+        renderItems();
+        input.value = "";
+        saveItems();
+      }
+      function removeItem(inx) {
+        items.splice(inx, 1);
+        renderItems();
+        saveItems();
+      }
+      document.addEventListener("DOMContentLoaded", loadItems);
+    </script>
+  </body>
+</html>
