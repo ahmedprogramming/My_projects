@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>typerWriter</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #333;
+      }
+      p {
+        color: white;
+        font-size: 50px;
+        overflow: hidden;
+        white-space: nowrap;
+        animation: typing 5s steps(30) both, blink 0.5s infinite both;
+      }
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 455px;
+        }
+      }
+      @keyframes blink {
+        from {
+          border-right: 4px solid white;
+        }
+        to {
+          border-right: 4px solid transparent;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <p>Welcome to my World</p>
+  </body>
+</html>

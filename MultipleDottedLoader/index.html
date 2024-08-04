@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multiple Dotted Loader</title>
+    <style>
+      @keyframes rotateAroundRight {
+        0% {
+          transform: rotate(0deg);
+        }
+
+        100% {
+          transform: rotate(1turn);
+        }
+      }
+      @keyframes rotateAroundLeft {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(-1turn);
+        }
+      }
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .loading {
+        width: 100%;
+        height: 100vh;
+        background-color: gray;
+        position: relative;
+      }
+      .loading .loader {
+        width: 100px;
+        height: 100px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 5px dotted black;
+        border-bottom: 5px solid white;
+        border-right: 5px solid white;
+        border-radius: 50%;
+        margin-top: -50px;
+        margin-left: -50px;
+        position: absolute;
+        animation: rotateAroundRight 3s linear infinite;
+      }
+      .loading .loader::before {
+        content: "";
+        inset: 0;
+        width: 60px;
+        height: 60px;
+        border: 5px dotted black;
+        transform: translate(-50%, -50%);
+        border-bottom: 5px solid red;
+        border-top: 5px solid red;
+        border-radius: 50%;
+        position: absolute;
+        margin: auto;
+        animation: rotateAroundLeft 2s linear infinite;
+      }
+      .loading .loader::after {
+        content: "";
+        inset: 0;
+        width: 30px;
+        height: 30px;
+        border: 5px dotted black;
+        transform: translate(-50%, -50%);
+        border-left: 5px solid green;
+        border-right: 5px solid green;
+        border-radius: 50%;
+        position: absolute;
+        margin: auto;
+        animation: rotateAroundRight 1s linear infinite;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="loading">
+      <div class="loader"></div>
+    </div>
+  </body>
+</html>

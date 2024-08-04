@@ -1,0 +1,43 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #fab22e;
+}
+.container{
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    background-color: black;
+    padding: 20px;
+    border-radius: 5px;
+}
+.container span{
+    text-align: center;
+    display: block;
+    font-size: 60px;
+    margin-bottom: 10px;
+}
+.container .text{
+    color: white;
+    padding: 5px 10px;
+    line-height: 1.7;
+    text-align: center;
+    opacity: 0;
+    min-height: 60px;
+}
+.container .fade{
+    opacity: 1;
+    transition: 1s;
+}
+.container button{
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #fab22e;
+    margin: 10px auto;
+    display: block;
+    cursor: pointer;
+}

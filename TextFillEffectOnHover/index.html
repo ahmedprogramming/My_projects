@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Fill Effect On Hover</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: monospace;
+    }
+    .container {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #333;
+    }
+    .container h1 {
+      font-size: 100px;
+      color: white;
+      text-transform: uppercase;
+      text-align: center;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+    .container h1::before {
+      content: attr(data-text);
+      width: 0;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      -webkit-text-fill-color: blue;
+      transition: 2s ease-out;
+      overflow: hidden;
+    }
+    .container h1:hover::before {
+      width: 100%;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <h1 data-text="AHMED">AHMED</h1>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MovingToRightTextEffectOnHover</title>
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #222;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: bold;
+    }
+    .container {
+      width: 300px;
+      border: 1px solid white;
+      padding: 10px;
+      position: relative;
+      text-align: center;
+      height: 65px;
+      overflow: hidden;
+      transition: 0.5s;
+    }
+    a {
+      color: white;
+      text-decoration: none;
+      font-size: 30px;
+      width: 100%;
+      position: absolute;
+      height: 65px;
+      top: 70%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: 0.5s;
+      white-space: nowrap;
+    }
+    a::before {
+      content: attr(data-text);
+      position: absolute;
+      height: 65px;
+      top: 51%;
+      left: -100%;
+      transform: translate(-50%, -50%);
+      transition: 0.5s;
+    }
+    .container:hover a {
+      left: 500px;
+    }
+    .container:hover a::before {
+      left: -68%;
+    }
+    span {
+    }
+  </style>
+  <body>
+    <div class="container">
+      <a href="" data-text="Hello World">
+        <span>Hello World</span>
+      </a>
+    </div>
+  </body>
+</html>

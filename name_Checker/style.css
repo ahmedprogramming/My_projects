@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .control{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+  }
+.container{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* Small */
+@media (min-width: 768px){
+    .container{
+        width: 750px;
+    }
+}
+/* Medium */
+@media (min-width: 992px){
+    .container{
+        width: 970px;
+    }
+}
+/* Large */
+@media (min-width: 1200px){
+    .container{
+        width: 1170px;
+    }
+}
+  .remove{
+    width: 80px;
+    border: 1px solid black;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+  }
+  .result{
+    width: 100%;
+    border: 1px solid black;
+    align-self: stretch;
+    position: relative;
+  }
+  .result p{
+    position: absolute;
+    left: 50%;
+    top: 35%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    text-align: center;
+    background-color: whitesmoke;
+    padding: 20px 0;
+  }
+  .reset{
+      width: 80px;
+      border: 1px solid black;
+      margin-left: 5px;
+      margin-right: 5px;
+      padding: 10px;
+      cursor: pointer;
+      text-align: center;
+  }
+  .check{
+    width: calc(100% - 160px);
+    margin: 5px 62px;
+    display: block;
+    text-align: center;
+    border: 1px solid black;
+    padding: 10px;
+    cursor: pointer;
+}
+.keyword{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: gray;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+.key{
+    width: calc(100% / 5);
+    text-align: center;
+    border: 1px solid black;
+    background-color: white;
+    box-shadow: 5px 5px 1px black;
+    margin: 4px 6px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.press{
+    background-color: rgb(190, 190, 190);
+    cursor: not-allowed;
+    box-shadow: 1px 1px 1px black;
+  }

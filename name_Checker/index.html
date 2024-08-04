@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/style.css" />
+    <title>Guess The Name</title>
+  </head>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .control {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100px;
+    }
+    .container {
+      padding-left: 15px;
+      padding-right: 15px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    /* Small */
+    @media (min-width: 768px) {
+      .container {
+        width: 750px;
+      }
+    }
+    /* Medium */
+    @media (min-width: 992px) {
+      .container {
+        width: 970px;
+      }
+    }
+    /* Large */
+    @media (min-width: 1200px) {
+      .container {
+        width: 1170px;
+      }
+    }
+    .remove {
+      width: 80px;
+      border: 1px solid black;
+      margin-left: 5px;
+      margin-right: 5px;
+      padding: 10px;
+      cursor: pointer;
+      text-align: center;
+    }
+    .result {
+      width: 100%;
+      border: 1px solid black;
+      align-self: stretch;
+      position: relative;
+    }
+    .result p {
+      position: absolute;
+      left: 50%;
+      top: 35%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      text-align: center;
+      background-color: whitesmoke;
+      padding: 20px 0;
+    }
+    .reset {
+      width: 80px;
+      border: 1px solid black;
+      margin-left: 5px;
+      margin-right: 5px;
+      padding: 10px;
+      cursor: pointer;
+      text-align: center;
+    }
+    .check {
+      width: calc(100% - 160px);
+      margin: 5px 62px;
+      display: block;
+      text-align: center;
+      border: 1px solid black;
+      padding: 10px;
+      cursor: pointer;
+    }
+    .keyword {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      background-color: gray;
+      justify-content: space-between;
+      padding: 10px 0;
+    }
+    .key {
+      width: calc(100% / 5);
+      text-align: center;
+      border: 1px solid black;
+      background-color: white;
+      box-shadow: 5px 5px 1px black;
+      margin: 4px 6px;
+      cursor: pointer;
+      transition: 0.5s;
+    }
+    .press {
+      background-color: rgb(190, 190, 190);
+      cursor: not-allowed;
+      box-shadow: 1px 1px 1px black;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="control">
+        <div id="reset" class="reset">Reset</div>
+        <div id="result" class="result">
+          <p id="resultP">End of chapter</p>
+        </div>
+        <div id="remove" class="remove">Remove</div>
+      </div>
+      <div class="check">check</div>
+      <div class="keyword">
+        <div id="key" class="key">A</div>
+        <div class="key">O</div>
+        <div class="key">M</div>
+        <div class="key">E</div>
+        <div class="key">S</div>
+        <div class="key">H</div>
+        <div class="key">I</div>
+        <div class="key">P</div>
+        <div class="key">K</div>
+        <div class="key">L</div>
+        <div class="key">D</div>
+        <div class="key">R</div>
+      </div>
+    </div>
+    <script>
+      // Get all elements with class "key"
+      let keys = document.querySelectorAll(".key");
+      let reset = document.getElementById("reset");
+      let result = document.getElementById("result");
+      let resultP = document.getElementById("resultP");
+      let resultPs = document.createTextNode("End of chapter");
+      let remover = document.getElementById("remove");
+      let saver;
+      let checker = false;
+      let counter = 0;
+      // Loop through each key element and add click event listener
+      keys.forEach(function (key) {
+        key.addEventListener("click", function () {
+          this.classList.add("press");
+          checker = true;
+          saver = key.textContent;
+          if (counter < 1) {
+            resultP.textContent = key.textContent;
+            counter += 1;
+          } else {
+            resultP.textContent += key.textContent;
+          }
+        });
+      });
+      reset.addEventListener("click", function () {
+        keys.forEach(function (key) {
+          key.classList.remove("press");
+          resultP.textContent = resultPs.textContent;
+          counter = 0;
+          checker = false;
+        });
+      });
+      // remover.addEventListener("click", function () {
+      //   if (checker == true) {
+      //     keys.forEach(function (key) {
+      //       if (resultP.textContent.split("").pop() == key.textContent) {
+      //         key.classList.remove("press");
+      //       }
+      //     });
+      //   }
+      // });
+      remover.addEventListener("click", function () {
+        if (checker == true) {
+          // Check if there's already a letter displayed (counter > 0)
+          if (counter > 0) {
+            // Get the current displayed text
+            let currentText = resultP.textContent;
+            // Use slice(-1) to remove the last character
+            let newText = currentText.slice(0, -1);
+            // Update the displayed text
+            resultP.textContent = newText;
+
+            // Reset the "pressed" state for the last pressed key
+            keys.forEach(function (key) {
+              if (currentText.split("").pop() == key.textContent) {
+                key.classList.remove("press");
+              }
+            });
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

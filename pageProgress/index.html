@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .header {
+        width: 100%;
+        background-color: black;
+        height: 10px;
+        position: fixed;
+      }
+      .fill {
+        position: absolute;
+        height: 100%;
+        width: 50%;
+        background-color: rgb(59, 59, 206);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header"><span class="fill"></span></div>
+    <div class="page" style="height: 1000px"></div>
+    <div class="page" style="height: 1000px"></div>
+    <div class="page" style="height: 1000px"></div>
+    <div class="page" style="height: 1000px"></div>
+    <div class="page" style="height: 1000px"></div>
+    <div class="page" style="height: 1000px"></div>
+    <div class="page" style="height: 1000px"></div>
+    <div class="page" style="height: 1000px"></div>
+    <div class="page" style="height: 1000px"></div>
+    <div class="page" style="height: 1000px"></div>
+    <div class="page" style="height: 1000px"></div>
+    <div class="page" style="height: 1000px"></div>
+    <div class="page" style="height: 1000px"></div>
+    <div class="page" style="height: 1000px"></div>
+    <script>
+      const header = document.querySelector(".header");
+      const fill = document.querySelector(".fill");
+      let scrollHeightLevel = document.body.scrollHeight;
+      console.log(scrollHeightLevel);
+
+      window.onscroll = function () {
+        let scroll = window.scrollY;
+        fill.style.width = `${
+          (scroll / (scrollHeightLevel - window.innerHeight)) * 100
+        }%`;
+      };
+    </script>
+  </body>
+</html>
