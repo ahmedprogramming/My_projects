@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spin Wheel</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        padding: 0;
+        margin: 0;
+        background-color: black;
+        color: white;
+      }
+      .container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .span {
+        font-size: 40px;
+        letter-spacing: 10px;
+        text-transform: uppercase;
+        mix-blend-mode: difference;
+      }
+      .container::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: white;
+        width: 50px;
+        z-index: -1;
+        height: 100%;
+        animation: spin 5s linear infinite;
+      }
+      @keyframes spin {
+        0%,
+        100% {
+          left: 0;
+        }
+        50% {
+          left: calc(100% - 50px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="span">loading</div>
+    </div>
+  </body>
+</html>

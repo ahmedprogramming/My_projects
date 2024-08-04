@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link rel="stylesheet" href="/GuessTheWordGame/style.css" />
+  </head>
+  <body>
+    <div class="pageOfGame">
+      <h1></h1>
+      <div class="games">
+        <div class="game-area">
+          <div class="inputs"></div>
+          <div class="control">
+            <button class="check">Check Word</button>
+            <button class="hint"><span></span> Hint</button>
+          </div>
+          <div class="message"></div>
+        </div>
+        <div class="learnArea">
+          <h1>Key Colors</h1>
+          <div class="keys">
+            <div class="key in-place">
+              <div
+                style="background-color: #f89e13"
+                class="color-key in-place-color"
+              ></div>
+              <p>Letter Is Right And In Place</p>
+            </div>
+            <div class="key not-in-place">
+              <div
+                style="background-color: #18ba89"
+                class="color-key not-in-place-color"
+              ></div>
+              <p>Letter Is Right But Not In Place</p>
+            </div>
+            <div class="key no">
+              <div
+                style="background-color: #27303f"
+                class="color-key no-color"
+              ></div>
+              <p>Letter Is Wrong</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer></footer>
+    <script src="/GuessTheWordGame/main.js"></script>
+  </body>
+</html>

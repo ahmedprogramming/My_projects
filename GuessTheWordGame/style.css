@@ -1,0 +1,148 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --primly-color: red;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #eee;
+}
+.pageOfGame{
+    width: 1000px;
+    position: absolute;
+    margin: 10px auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: rgba(0, 0, 0, 0.103);
+    padding: 10px;
+}
+.pageOfGame h1{
+    text-align: center;
+}
+.pageOfGame .games{
+    display: flex;
+    margin: 10px auto;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.pageOfGame .game-area .inputs .try{
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+
+}
+.pageOfGame .game-area .inputs .try.hide{
+    pointer-events: none;
+    opacity: 0.3;
+}
+.pageOfGame .game-area .inputs .try-letter{
+    width: 60px;
+    height: 60px;
+    margin: 2px 2px;
+    font-size: 50px;
+    text-align: center;
+}
+.pageOfGame .game-area .inputs .try-letter:focus{
+    outline: none;
+}
+.pageOfGame .game-area .inputs .try-letter.in-place-color{
+    background-color: #f89e13;
+    border: 1px solid #f89e13;
+
+}
+.pageOfGame .game-area .inputs .try-letter.not-in-place-color{
+    background-color: #18ba89;
+    border: 1px solid #18ba89;
+}
+.pageOfGame .game-area .inputs .try-letter.no-color{
+    background-color: #27303f;
+    border: 1px solid #27303f;
+}
+.pageOfGame .game-area .control{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    
+}
+.pageOfGame .game-area  .message{
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+    display: block;
+    margin-bottom: 20px;
+
+}
+.pageOfGame .game-area  .message span{
+    display: block;
+    color: #f89e13;
+    font-size: 35px;
+}
+.pageOfGame .game-area  .message .wrong-word{
+    color: red !important;
+}
+.pageOfGame .game-area .control .check{
+    font-size: 25px;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+.pageOfGame .game-area .control .hint{
+    font-size: 25px;
+    border-radius: 5px;
+    margin-left: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+.pageOfGame .game-area .message{
+
+}
+.pageOfGame .learnArea{
+    margin-left: 10px;
+    background-color: rgb(241, 240, 239);
+    padding: 20px;
+}
+.pageOfGame .learnArea h1{
+
+}
+.pageOfGame .learnArea .keys{
+
+
+}
+.pageOfGame .learnArea .keys .key{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.pageOfGame .learnArea .keys .key p{
+    width: 300px;
+}
+.pageOfGame .learnArea .keys .color-key{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 30px;
+    
+}
+.pageOfGame .learnArea .keys .key p{
+    
+}
+footer{
+    margin-top: 10px;
+    font-size: 23px;
+    font-weight: bold;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    color: white;
+    background-color: black;
+    width: 100%;
+
+}

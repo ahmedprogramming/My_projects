@@ -1,0 +1,76 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #ae9cff;
+}
+.container{
+    width: 90vh;
+    background-color: #ffffff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.432);
+}
+.container .user{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.container .user #inputText{
+    border: none;
+    border-bottom: 1px solid #ae9cff;
+    width: 300px;
+    padding: 10px;
+    font-size: 20px;
+}
+.container .user #inputText:focus{
+    outline: none;
+}
+.container .user #searchBtn{
+    padding: 10px 15px;
+    background-color: #ae9cff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.container .result{
+    margin-top: 20px;
+}
+.container .result .textWord{
+    font-size: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.container .result .textWord #word{
+    color: #312e3f;
+}
+.container .result .textWord .sou{
+    color: #3f385e;
+    cursor: pointer;
+    background-color: transparent;
+    font-size: 30px;
+    border: none;
+
+}
+
+.container .result .details .prons{
+    font-size: 20px;
+}
+.container .result .details .meaning{
+    margin: 15px 5px;
+    font-size: 15px;
+}
+.container .result .details .example{
+    border-left: 6px solid #3f385e;
+    padding-left: 10px;
+    font-size: 14px;
+}
