@@ -1,0 +1,127 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #fefefe;
+    height: 100vh;
+}
+.app{
+    width: 600px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    max-width: 100%;
+    margin: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: gray;
+    text-align: center;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+#titleQ{
+    margin-top: 0;
+    padding-top: 10px;
+    font-size: 50px;
+    font-weight: bold;
+    
+}
+#titleB{
+    font-size: 30px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #f89e13;
+    color: white;
+    transition: 0.5s;
+
+}
+#titleB:hover{
+    background-color: #f89e13d0;
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 0 10px #f89e13;
+    font-weight: bold;
+}
+ul{
+    list-style-type: none;
+}
+ul li{
+    list-style-type: none;
+
+}
+.titleOfQuestion{
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.answer button{
+    width: 30%;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #f89e13;
+    color: white;
+    transition: 0.5s;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.answer button:hover{
+    background-color: #f89e13d0;
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 0 10px #f89e13;
+    font-weight: bold;
+}
+.end{
+    /* put it in middle */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 30px;
+}
+.end button{
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #f89e13;
+    color: white;
+    transition: 0.5s;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+    display: block;
+    margin: 10px auto;
+}
+.end button:hover{
+    background-color: #f89e13d0;
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 0 10px #f89e13;
+    font-weight: bold;
+}
+.timer{
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 10px;
+    background-color: #f89e13;
+    color: white;
+}

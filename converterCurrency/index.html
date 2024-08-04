@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .oman-cururency {
+        width: 100px;
+        border: 1px solid black;
+        padding: 10px;
+        text-align: center;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div class="container">
+        <h1>Change Currency from USA to Oman</h1>
+        <label for="converter">Currency in Dolar</label>
+        <input class="converter" name="converter" type="text" />
+        <div class="oman-cururency">0</div>
+      </div>
+    </div>
+    <script>
+      const converter = document.querySelector(".converter");
+      const omanCururency = document.querySelector(".oman-cururency");
+      fetch(
+        "https://api.currencyfreaks.com/latest?apikey=a167052930aa4999a4cb4ff2af0f3a65"
+      )
+        .then((Elements) => Elements.json())
+        .then((data) => {
+          converter.addEventListener("input", (e) => {
+            let answer = converter.value * data.rates.OMR;
+            omanCururency.innerHTML = `${answer.toFixed(2)} OMR`;
+          });
+        });
+    </script>
+  </body>
+</html>
+input

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animate Width On Scrolling</title>
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    .page {
+      width: 100%;
+      background-color: #222;
+    }
+    .section {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 30px;
+      border-bottom: 5px solid white;
+    }
+    .section.section-3 ul li {
+      list-style-type: none;
+      width: 500px;
+      height: 30px;
+      background-color: white;
+      margin-bottom: 50px;
+      position: relative;
+    }
+    .section.section-3 ul li span {
+      width: 0;
+      height: 100%;
+      background-color: skyblue;
+      display: block;
+    }
+    .section.section-3 ul li::before {
+      content: attr(data-width);
+      position: absolute;
+      width: 0;
+      height: 100%;
+      background-color: red;
+      display: block;
+      top: -40px;
+      right: 24px;
+    }
+  </style>
+  <body>
+    <div class="page">
+      <div class="section section-1">section-1</div>
+      <div class="section section-2">section-2</div>
+      <div class="section section-3">
+        <ul>
+          <li data-width="50"><span></span></li>
+          <li data-width="25"><span></span></li>
+          <li data-width="44"><span></span></li>
+          <li data-width="93"><span></span></li>
+          <li data-width="83"><span></span></li>
+        </ul>
+      </div>
+      <div class="section section-4">section-4</div>
+      <div class="section section-5">section-5</div>
+    </div>
+    <script>
+      let section3 = document.querySelector(".section-3");
+      let lis = document.querySelectorAll(".section-3 ul li");
+      let span = document.querySelectorAll(".section-3 ul li span");
+      let decration = 2000;
+      let check = true;
+      window.addEventListener("scroll", () => {
+        if (check)
+          if (window.scrollY >= section3.offsetTop) {
+            check = false;
+            scrollOnTime(lis);
+          }
+      });
+      function scrollOnTime(li) {
+        li.forEach((lil) => {
+          let widthOfSpan = lil.getAttribute("data-width");
+          console.log(widthOfSpan);
+          let num = 0;
+          let interval = setInterval(() => {
+            num++;
+            console.log(num);
+            lil.children[0].style.width = `${num}%`;
+            if (num == widthOfSpan) {
+              clearInterval(interval);
+            }
+          }, decration / widthOfSpan);
+        });
+      }
+    </script>
+  </body>
+</html>

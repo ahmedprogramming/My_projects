@@ -1,0 +1,64 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #3d64e6;
+}
+ul{
+    list-style-type: none;
+}
+.app{
+    width: 600px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border: 2px solid black;
+}
+.app .container{
+    padding: 30px;
+    background-color: #ffffff;
+}
+.app .container .search_place{
+    display: flex;
+}
+.app .container .search_place .search{
+    margin-right: 15px;
+    width: 500px;
+    padding: 5px;
+}
+.app .container .search_place .btn{
+    width: 200px;
+    background-color: #3d64e6;
+    color: white;
+    font-size: 18px;
+    border-radius: 15px;
+    cursor: pointer;
+
+}
+.app .container .result{
+
+}
+.app .container .image{
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+.app .container .image img{
+    width: 300px;
+}
+.app .container .image h2{
+}
+.app .container ul{
+    margin: 10px 5px;
+    font-size: 20px;
+}
+.app .container ul li{
+    margin-bottom: 7px;
+}
+.app .container ul li span{
+    color: #575555;
+    margin-left: 5px;
+}
